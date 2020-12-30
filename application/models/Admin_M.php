@@ -9,9 +9,10 @@ class Admin_M extends CI_Model{
 		return $this->db->get("user");
 	}
 
-	public function add_data($nama,$jurusan,$angkatan,$poin)
+	public function add_data($nim,$nama,$jurusan,$angkatan,$poin)
 	{
-		$data = array("nama" => $nama,
+		$data = array("nim" => $nim,
+					  "nama" => $nama,
 					  "jurusan" => $jurusan,
 					  "angkatan" => $angkatan,
 					  "poin" => $poin);

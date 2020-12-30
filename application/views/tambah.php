@@ -19,6 +19,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <form action="<?= site_url('Admin/input'); ?>" method="POST">
 	<label>
+		NIM : 
+	</label>
+	<br>
+	<input type="number" name="nim">
+	<br><br>
+	<label>
 		Nama :
 	</label>
 	<br>

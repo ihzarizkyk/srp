@@ -29,12 +29,13 @@ class Admin extends CI_Controller{
 
 	public function input()
 	{
+	$nim = $this->input->post("nim");
 	$nama = $this->input->post("nama");
 	$jurusan = $this->input->post("jurusan");
 	$angkatan = $this->input->post("angkatan");
 	$poin = $this->input->post("poin");
 
-		$this->Admin_M->add_data($nama,$jurusan,$angkatan,$poin);
+		$this->Admin_M->add_data($nim,$nama,$jurusan,$angkatan,$poin);
 		redirect("Admin");
 
 	}
@@ -56,12 +57,13 @@ class Admin extends CI_Controller{
 	public function ubah()
 	{
 		$id = $this->input->post("id");
+		$nim = $this->input->post("nim");
 		$nama = $this->input->post("nama");
 		$jurusan = $this->input->post("jurusan");
 		$angkatan = $this->input->post("angkatan");
 		$poin = $this->input->post("poin");
 
-		$data = array("nama" => $nama, "jurusan" => $jurusan, "angkatan" => $angkatan, "poin" => $poin);
+		$data = array("nim" => $nim,"nama" => $nama, "jurusan" => $jurusan, "angkatan" => $angkatan, "poin" => $poin);
 		$where = array("id" => $id);
 
 		$this->Admin_M->update($where,$data,"user");

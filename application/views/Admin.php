@@ -27,6 +27,7 @@
 	<table border="2">
 		<tr>
 			<th>Rank</th>
+			<th>NIM</th>
 			<th>Nama</th>
 			<th>Jurusan / Prodi</th>
 			<th>Angkatan</th>
@@ -39,6 +40,7 @@
 	 ?>
 		<tr>
 			<td><?= $rank++; ?></td>
+			<td><?= $users->nim; ?></td>
 			<td><?= $users->nama; ?></td>
 			<td><?= $users->jurusan; ?></td>
 			<td><?= $users->angkatan; ?></td>

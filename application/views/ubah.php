@@ -13,6 +13,13 @@ foreach($user as $usr):
 ?>
 	<form action="<?= base_url('Admin/ubah'); ?>" method="post">
 		<input type="hidden" name="id" value="<?= $usr->id; ?>">
+		<br>
+		<label>
+			NIM :
+		</label>
+		<br>
+		<input type="number" name="nim" value="<?= $usr->nim; ?>">
+		<br><br>
 		<label>
 			Nama :
 		</label>
