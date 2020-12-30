@@ -1,4 +1,4 @@
-# Srn - Sistem Ranking Nilai
+# Srp - Sistem Ranking Poin
 
 **Requirements :**
 
