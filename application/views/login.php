@@ -14,16 +14,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 	<form action="<?= site_url('Auth/Login'); ?>" method="POST">
 		<label>
-			Username :
+			<b>Username :</b>
 		</label>
 		<br>
 		<input type="text" name="username" required>
 		<br><br>
 		<label>
-			Password :
+			<b>Sandi :</b>
 		</label>
 		<br>
-		<input type="password" name="password" required>
+		<input type="password" name="password" id="pass"required>
+		<br><br>
+		<input type="checkbox" name="checkbox" onclick="Toggle()"> <b>Sembunyikan / Tampilkan Sandi</b>
 		<br><br>
 		<button type="submit" name="login">
 			Login
@@ -38,5 +40,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		</a>
 	</form>
 
+<script>
+	function Toggle()
+	{
+		var pass = document.getElementById("pass");
+		if(pass.type == "password")
+		{
+			pass.type = "text";
+		}else{
+			pass.type = "password";
+		}
+	}
+</script>
 </body>
 </html>

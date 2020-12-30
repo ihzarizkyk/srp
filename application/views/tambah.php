@@ -40,7 +40,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		Angkatan :
 	</label>
 	<br>
-	<input type="number" name="angkatan" required>
+	<input type="number" name="angkatan">
 	<br><br>
 	<label>
 		Poin :
