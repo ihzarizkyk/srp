@@ -113,7 +113,7 @@ class Admin extends CI_Controller{
 		$pdf->SetFont('','B',10);
 		$pdf->Cell(40,8,"DATE : $conv",0,1);
 
-		$pdf->Output("LaporanSRP.pdf");
+		$pdf->Output("LaporanSRP_Admin.pdf");
 	}
 
 
