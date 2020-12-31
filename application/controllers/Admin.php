@@ -70,16 +70,51 @@ class Admin extends CI_Controller{
 		redirect("Admin");
 	}
 
-/*
+
 	public function pdf()
 	{
-		$data['user'] = $this->Admin_M->show_data()->result();
+		$this->load->library("TCPDF");
+		$this->load->library("parser");
+
+		$pdf = new TCPDF();
+		$pdf->AddPage('L','mm','A4');
+		$pdf->SetFont('','B',16);
+		$pdf->Cell(277,10,"Laporan Sistem Ranking Poin",0,1,'C');
+		$pdf->SetAutoPageBreak(true,0);
+
+		// Header
+		$pdf->Ln(10);
+		$pdf->SetFont('','B',12);
+		$pdf->Cell(20,8,"Rank",1,0,'C');
+		$pdf->Cell(30,8,"NIM",1,0,'C');
+		$pdf->Cell(80,8,"Nama",1,0,'C');
+		$pdf->Cell(50,8,"Jurusan",1,0,'C');
+		$pdf->Cell(40,8,"Angkatan",1,0,'C');
+		$pdf->Cell(25,8,"Poin",1,1,"C");
+
+		$pdf->SetFont('','',12);
+
+		$data = $this->Admin_M->show_data()->result();
+		$date = time();
+		$conv = unix_to_human($date);
 		$rank = 0;
-		$pdf = new FPDF('P','cm','A4');
-		$pdf->AddPage();
-		$pdf->SetFont("Helvetica");
-		$pdf->output();
+
+		foreach($data as $dt){
+
+		$rank++;
+		$pdf->Cell(20,8,$rank,1,0,'C');
+		$pdf->Cell(30,8,$dt->nim,1,0);
+		$pdf->Cell(80,8,$dt->nama,1,0);
+		$pdf->Cell(50,8,$dt->jurusan,1,0);
+		$pdf->Cell(40,8,$dt->angkatan,1,0);
+		$pdf->Cell(25,8,$dt->poin,1,1);
+		}
+
+		$pdf->SetFont('','B',10);
+		$pdf->Cell(40,8,"DATE : $conv",0,1);
+
+		$pdf->Output("LaporanSRP.pdf");
 	}
-*/
+
 
 }
