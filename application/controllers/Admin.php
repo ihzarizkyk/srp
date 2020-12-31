@@ -85,9 +85,9 @@ class Admin extends CI_Controller{
 		// Header
 		$pdf->Ln(10);
 		$pdf->SetFont('','B',12);
-		$pdf->Cell(20,8,"Rank",1,0,'C');
+		$pdf->Cell(13,8,"Rank",1,0,'C');
 		$pdf->Cell(30,8,"NIM",1,0,'C');
-		$pdf->Cell(80,8,"Nama",1,0,'C');
+		$pdf->Cell(70,8,"Nama",1,0,'C');
 		$pdf->Cell(50,8,"Jurusan",1,0,'C');
 		$pdf->Cell(40,8,"Angkatan",1,0,'C');
 		$pdf->Cell(25,8,"Poin",1,1,"C");
@@ -102,9 +102,9 @@ class Admin extends CI_Controller{
 		foreach($data as $dt){
 
 		$rank++;
-		$pdf->Cell(20,8,$rank,1,0,'C');
+		$pdf->Cell(13,8,$rank,1,0,'C');
 		$pdf->Cell(30,8,$dt->nim,1,0);
-		$pdf->Cell(80,8,$dt->nama,1,0);
+		$pdf->Cell(70,8,$dt->nama,1,0);
 		$pdf->Cell(50,8,$dt->jurusan,1,0);
 		$pdf->Cell(40,8,$dt->angkatan,1,0);
 		$pdf->Cell(25,8,$dt->poin,1,1);
@@ -116,5 +116,11 @@ class Admin extends CI_Controller{
 		$pdf->Output("LaporanSRP_Admin.pdf");
 	}
 
+/*
+*	public function xls()
+*	{
+*		// code here
+*	}
+*/
 
 }
