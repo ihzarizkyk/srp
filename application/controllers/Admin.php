@@ -73,7 +73,7 @@ class Admin extends CI_Controller{
 
 	public function pdf()
 	{
-		$this->load->library("TCPDF");
+		$this->load->library("pdf/TCPDF");
 		$this->load->library("parser");
 
 		$pdf = new TCPDF();
