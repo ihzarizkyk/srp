@@ -29,11 +29,13 @@ class Admin extends CI_Controller{
 
 	public function input()
 	{
-	$nim = $this->input->post("nim");
-	$nama = $this->input->post("nama");
-	$jurusan = $this->input->post("jurusan");
-	$angkatan = $this->input->post("angkatan");
-	$poin = $this->input->post("poin");
+	// post('data',true);
+	// true untuk XSS FILTERING
+	$nim = $this->input->post("nim",true);
+	$nama = $this->input->post("nama",true);
+	$jurusan = $this->input->post("jurusan",true);
+	$angkatan = $this->input->post("angkatan",true);
+	$poin = $this->input->post("poin",true);
 
 		$this->Admin_M->add_data($nim,$nama,$jurusan,$angkatan,$poin);
 		redirect("Admin");
@@ -56,12 +58,14 @@ class Admin extends CI_Controller{
 
 	public function ubah()
 	{
-		$id = $this->input->post("id");
-		$nim = $this->input->post("nim");
-		$nama = $this->input->post("nama");
-		$jurusan = $this->input->post("jurusan");
-		$angkatan = $this->input->post("angkatan");
-		$poin = $this->input->post("poin");
+		// post('data',true);
+		// true untuk XSS FILTERING
+		$id = $this->input->post("id",true);
+		$nim = $this->input->post("nim",true);
+		$nama = $this->input->post("nama",true);
+		$jurusan = $this->input->post("jurusan",true);
+		$angkatan = $this->input->post("angkatan",true);
+		$poin = $this->input->post("poin",true);
 
 		$data = array("nim" => $nim,"nama" => $nama, "jurusan" => $jurusan, "angkatan" => $angkatan, "poin" => $poin);
 		$where = array("id" => $id);
